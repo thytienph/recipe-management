@@ -1,0 +1,50 @@
+<form [formGroup]="recipeForm">
+  <div class="row">
+    <div class="col-xs-12 btn-toolbar">
+      <button class="btn btn-success" disabled type="submit">Save</button>
+      <button (click)="goBack()"
+              class="btn btn-danger"
+              type="submit">Cancel
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 btn-toolbar">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input class="form-control"
+               formControlName="name"
+               id="name" name="name" type="text">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 btn-toolbar">
+      <div class="form-group">
+        <label for="imagePath">Image URL</label>
+        <input class="form-control"
+               formControlName="image"
+               id="imagePath" name="imagePath" type="text">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 btn-toolbar">
+      <img class="img-responsive"
+           src="{{recipeForm.value.image}}"
+           height="150px"
+           width="150px">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 btn-toolbar">
+      <label for="description">Description</label>
+      <textarea class="form-control"
+                formControlName="description"
+                id="description" name="description"></textarea>
+    </div>
+  </div>
+</form>

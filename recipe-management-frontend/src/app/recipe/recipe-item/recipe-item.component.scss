@@ -1,0 +1,16 @@
+.list-group-item {
+  border-radius: 4px;
+}
+
+.list-group-item:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
