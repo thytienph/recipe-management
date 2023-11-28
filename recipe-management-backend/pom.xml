@@ -13,6 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>recipe-management-backend</name>
     <description>recipe-management-backend</description>
+    <packaging>war</packaging>
     <properties>
         <java.version>17</java.version>
     </properties>
@@ -47,7 +48,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.codehaus.mojo/exec-maven-plugin -->
         <dependency>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>exec-maven-plugin</artifactId>
