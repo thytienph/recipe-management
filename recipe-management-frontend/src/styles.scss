@@ -1,4 +1,15 @@
 * {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+}
+
+.container-fluid {
+  padding: 0 15px;
+  margin: auto;
 }

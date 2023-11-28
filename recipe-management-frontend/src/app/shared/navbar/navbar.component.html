@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Recipe Book</a>
+    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+            class="navbar-toggler"
+            data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-lg-0">
+        <li class="nav-item">
+          <a [routerLinkActive]="'active'" [routerLink]="['recipe']"
+             aria-current="page"
+             class="nav-link">Recipes</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLinkActive]="'active'"
+             [routerLink]="['about']"
+             class="nav-link">About</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

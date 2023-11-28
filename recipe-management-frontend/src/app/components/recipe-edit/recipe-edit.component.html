@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form (ngSubmit)="onSubmit()" [formGroup]="recipeForm">
+      <div class="row">
+        <div class="col-xs-12 btn-toolbar">
+          <button class="btn btn-success"
+                  [disabled]="recipeForm.invalid"
+                  type="submit">
+            Save
+          </button>
+          <button [routerLink]="['']" class="btn btn-danger" type="button">
+            Cancel
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input [defaultValue]="'Recipe Name'"
+                   [ngClass]="(
+                   (recipeFormControl['name'].touched || submitted)
+                   && recipeFormControl['name'].errors?.['required']
+                   ) ? 'is-invalid' : ''"
+                   class="form-control"
+                   formControlName="name"
+                   id="name"
+                   name="name"
+                   type="text">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="imagePath">Image URL</label>
+            <input [ngClass]="(
+                   (recipeFormControl['image'].touched || submitted)
+                   && recipeFormControl['image'].errors?.['required']
+                   ) ? 'is-invalid' : ''"
+                   class="form-control"
+                   formControlName="image"
+                   id="imagePath"
+                   name="imagePath"
+                   type="text">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <img class="img-responsive" height="150px"
+               src="{{recipeForm.value.image}}" width="150px">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea [ngClass]="(
+                   (recipeFormControl['description'].touched || submitted)
+                   && recipeFormControl['description'].errors?.['required']
+                   ) ? 'is-invalid' : ''"
+                      class="form-control"
+                      formControlName="description"
+                      id="description"
+                      name="description"></textarea>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
