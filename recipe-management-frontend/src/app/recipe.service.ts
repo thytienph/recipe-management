@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Recipe} from "./recipe";
 @Injectable({
   providedIn: 'root'
 })
+
 export class RecipeService {
   recipeUrl = 'http://localhost:8080/recipes';
   httpOptions = {
@@ -33,4 +33,13 @@ export class RecipeService {
     const url = `${this.recipeUrl}/${id}`;
     return this.httpClient.delete<Recipe>(url, this.httpOptions);
   }
+}
+
+
+
+export interface Recipe {
+  id?: number;
+  name?: string;
+  image?: string;
+  description?: string;
 }

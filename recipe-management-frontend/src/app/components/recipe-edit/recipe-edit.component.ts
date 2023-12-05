@@ -1,8 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {RecipeService} from "../../recipe.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-recipe-edit',
@@ -28,7 +27,8 @@ export class RecipeEditComponent implements OnInit {
   constructor(
     private recipeService: RecipeService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private cdr: ChangeDetectorRef
   ) {
   }
 
@@ -60,7 +60,10 @@ export class RecipeEditComponent implements OnInit {
         );
       } else {
         this.recipeService.addRecipe(this.recipeForm).subscribe(
-          () => this.goBack()
+          () => {
+            this.cdr.detectChanges();
+            this.goBack()
+          }
         )
       }
     } else {
@@ -69,7 +72,8 @@ export class RecipeEditComponent implements OnInit {
   }
 
   goBack(): void {
-    this.router.navigate(['/', 'recipe']);
+    this.router.navigate(['/', 'recipe']).then(
+      () => window.location.reload());
   }
 
   get recipeFormControl() {

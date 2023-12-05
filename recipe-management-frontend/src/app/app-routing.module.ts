@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {AboutComponent} from "./components/about/about.component";
-import {RecipeBookComponent} from "./components/recipe-book/recipe-book.component";
 import {NoRecipeComponent} from "./components/no-recipe/no-recipe.component";
 import {RecipeEditComponent} from "./components/recipe-edit/recipe-edit.component";
 import {RecipeDetailsComponent} from "./components/recipe-details/recipe-details.component";
+import {RecipeListComponent} from "./components/recipe-list/recipe-list.component";
 
 const routes: Routes = [
   {
@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'recipe',
-    component: RecipeBookComponent,
+    component: RecipeListComponent,
     children: [
       {
         path: '',
